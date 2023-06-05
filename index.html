@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi Página de Cuadros con Lluvia</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .category-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 30px;
+    }
+    .box-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .box {
+      width: 250px;
+      height: 380px;
+      border: 1px solid #ccc;
+      margin: 20px;
+      padding: 20px;
+      text-align: center;
+      background-color: #fff;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .box:hover {
+      transform: scale(1.05);
+    }
+    .box img {
+      max-width: 100%;
+      max-height: 200px;
+      margin-bottom: 10px;
+    }
+    .menu-icon {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      cursor: pointer;
+    }
+    .menu-icon span {
+      display: block;
+      width: 30px;
+      height: 4px;
+      background-color: #fff;
+      margin-bottom: 5px;
+    }
+    .dropdown {
+      position: absolute;
+      top: 30px;
+      left: 10px;
+      background-color: #222;
+      padding: 10px;
+      display: none;
+      z-index: 999;
+    }
+    .dropdown a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+    .dropdown a:hover {
+      background-color: #444;
+    }
+    .menu-icon:hover .dropdown {
+      display: block;
+    }
+    #rain-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .raindrop {
+      position: absolute;
+      width: 1px;
+      height: 70px;
+      background-color: rgba(255, 255, 255, 0.8);
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px);
+      }
+      100% {
+        transform: translateY(100vh);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Mis Cuadros</h1>
+
+  <div class="menu-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+    <div class="dropdown">
+      <a href="categoria1.html">PC</a>
+      <a href="categoria2.html">Celular</a>
+      <a href="categoria3.html">Emuladores</a>
+    </div>
+  </div>
+
+  <div class="category-title">PC</div>
+  <div class="box-container">
+    <div class="box" onclick="window.location.href='https://https://www.mediafire.com/file/qnbw5goby6by7ma/Five_Nights_At_Freddy%2527s_Collection_%2528Lezra_Games%2529.rar/file';">
+      <img src="aa7ea03891fff76ecdd155d8867debf4.jpg" alt="Imagen 1">
+      <h3>FNAF Saga</h3>
+      <p>Ambientado en el ficticio restaurante de Freddy Fazbear's Pizza. El juego se centra en un guardia de seguridad nocturno defendiéndose del constante ataque de los defectuosos personajes animatrónicos del establecimiento, rastreando sus movimientos a través del edificio utilizando un sistema de cámaras de seguridad.</p>
+    </div>
+
+    <div class="box" onclick="window.location.href='https://www.lugar2.com';">
+      <img src="ruta_a_la_imagen2.jpg" alt="Imagen 2">
+      <h3>Título 2</h3>
+      <p>Descripción del cuadro 2.</p>
+    </div>
+
+    <div class="box" onclick="window.location.href='https://www.lugar3.com';">
+      <img src="ruta_a_la_imagen3.jpg" alt="Imagen 3">
+      <h3>Título 3</h3>
+      <p>Descripción del cuadro 3.</p>
+    </div>
+
+    <!-- Agrega más cuadros aquí -->
+
+  </div>
+
+  <div class="category-title">Categoría 2</div>
+  <div class="box-container">
+    <div class="box" onclick="window.location.href='https://www.lugar3.com';">
+      <img src="ruta_a_la_imagen3.jpg" alt="Imagen 3">
+      <h3>Título 3</h3>
+      <p>Descripción del cuadro 3.</p>
+    </div>
+
+    <div class="box" onclick="window.location.href='https://www.lugar4.com';">
+      <img src="ruta_a_la_imagen4.jpg" alt="Imagen 4">
+      <h3>Título 4</h3>
+      <p>Descripción del cuadro 4.</p>
+    </div>
+
+    <!-- Agrega más cuadros aquí -->
+
+  </div>
+
+  <div class="category-title">Categoría 3</div>
+  <div class="box-container">
+    <div class="box" onclick="window.location.href='https://www.youtube.com';">
+      <img src="ruta_a_la_imagen5.jpg" alt="Imagen 5">
+      <h3>Youtube</h3>
+      <p>Descripción del cuadrflygupgupt7pg7oguogoyglygkygykgtkgtkgiyyhkhukhkuhkuhkhyjgo 5.</p>
+    </div>
+
+    <div class="box" onclick="window.location.href='https://www.lugar6.com';">
+      <img src="ruta_a_la_imagen6.jpg" alt="Imagen 6">
+      <h3>Título 6</h3>
+      <p>Descripción del cuadro 6.</p>
+    </div>
+
+    <!-- Agrega más cuadros aquí -->
+
+  </div>
+
+  <div id="rain-container"></div>
+
+  <script>
+    // Crear las gotas de lluvia
+    function createRaindrops() {
+      var rainContainer = document.getElementById("rain-container");
+      for (var i = 0; i < 50; i++) {
+        var raindrop = document.createElement("div");
+        raindrop.className = "raindrop";
+        raindrop.style.left = Math.random() * 100 + "%";
+        raindrop.style.animationDuration = Math.random() * 2 + 3 + "s";
+        rainContainer.appendChild(raindrop);
+      }
+    }
+
+    // Iniciar la animación de lluvia
+    createRaindrops();
+  </script>
+</body>
+</html>
